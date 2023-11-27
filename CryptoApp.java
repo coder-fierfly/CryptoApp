@@ -1,7 +1,7 @@
 import javax.swing.*;
 import java.util.Objects;
 
-    public class CryptoApp extends JFrame {
+public class CryptoApp extends JFrame {
     //    шифры Вижинера, Цезаря, двойной перестановки
     private final JTextArea inputTextArea;
     private final JTextArea outputTextArea;
@@ -136,7 +136,7 @@ import java.util.Objects;
     }
 
     private String encryptVigenere(String text, String key) {
-        String alp = Alpthabet.alphabet;
+        String alp = Alphabet.alphabet;
 
         StringBuilder retText = new StringBuilder();
         int j = 0; //для шифра отдельный счетчик, чтобы при пробелах не сбивался
@@ -162,7 +162,7 @@ import java.util.Objects;
 
 
     private String decryptVigenere(String text, String key) {
-        String alp = Alpthabet.alphabet;
+        String alp = Alphabet.alphabet;
         StringBuilder decryptedText = new StringBuilder();
         // Цикл по декодируемому тексту
         int j = 0; //для шифра отдельный счетчик, чтобы при пробелах не сбивался
@@ -190,7 +190,7 @@ import java.util.Objects;
 
     // шифрование Цезарем
     private static String encryptCaesar(String text, String key) {
-        String alp = Alpthabet.lowAlphabet;
+        String alp = Alphabet.lowAlphabet;
         int iKey = Integer.parseInt(key);  // iKey - для смещения
         StringBuilder result = new StringBuilder();
 
@@ -267,6 +267,7 @@ import java.util.Objects;
         }
         return matrix;
     }
+
     public static int[] intToArray(int number) {
         String numberString = Integer.toString(number);
         int[] result = new int[numberString.length()];
@@ -276,7 +277,7 @@ import java.util.Objects;
         return result;
     }
 
-    public static class Alpthabet {
+    public static class Alphabet {
         public static String alphabet = "абвгдеёжзийклмнопрстуфхцчшщъыьэюяАБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ";
         public static String lowAlphabet = "абвгдеёжзийклмнопрстуфхцчшщъыьэюя";
     }
